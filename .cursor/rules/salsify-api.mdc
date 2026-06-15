@@ -1,0 +1,21 @@
+---
+description: Salsify API reference for MCP server development
+globs: src/salsify/**,src/tools/**
+alwaysApply: true
+---
+
+# Salsify API Reference
+
+This MCP server integrates with **Salsify PIM API v1** at `https://app.salsify.com/api/v1/orgs/{orgId}`.
+
+Official docs:
+- Overview: https://developers.salsify.com/docs
+- Products: https://developers.salsify.com/docs/product-object
+- Filter syntax: https://developers.salsify.com/reference/salsify-filtering-language-syntax
+
+## Conventions
+
+- Auth: `Authorization: Bearer {api_token}`
+- Credentials via `X-Salsify-Api-Token` and `X-Salsify-Org-Id` headers or env vars
+- Bulk ID lookups use HTTP `REPORT` method with body `{ "ids": [...] }`
+- v1 executes read operations only; write routes are documented via recommend tool
