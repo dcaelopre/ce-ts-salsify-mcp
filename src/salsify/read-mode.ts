@@ -2,13 +2,19 @@ export function assertSingleReadMode(
   modes: Record<string, boolean>,
   labels: string[],
 ): void {
-  const active = labels.filter((label) => modes[label]);
-  if (active.length === 0) {
+  const keys = Object.keys(modes);
+  const activeKeys = keys.filter((key) => modes[key]);
+  const activeLabels = activeKeys.map(
+    (key) => labels[keys.indexOf(key)] ?? key,
+  );
+
+  if (activeKeys.length === 0) {
     throw new Error("Provide exactly one lookup mode: " + labels.join(", "));
   }
-  if (active.length > 1) {
+  if (activeKeys.length > 1) {
     throw new Error(
-      "Provide only one lookup mode at a time. Received: " + active.join(", "),
+      "Provide only one lookup mode at a time. Received: " +
+        activeLabels.join(", "),
     );
   }
 }
