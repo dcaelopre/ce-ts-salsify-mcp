@@ -11,9 +11,13 @@ export class SalsifyClient {
     return this.config.orgId;
   }
 
+  private normalizeToken(token: string): string {
+    return token.replace(/^Bearer\s+/i, "").trim();
+  }
+
   private authHeaders(includeContentType: boolean): Record<string, string> {
     return {
-      Authorization: "Bearer " + this.config.apiToken,
+      Authorization: "Bearer " + this.normalizeToken(this.config.apiToken),
       Accept: "application/json",
       ...(includeContentType ? { "Content-Type": "application/json" } : {}),
     };
