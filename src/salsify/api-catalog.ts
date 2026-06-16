@@ -152,6 +152,18 @@ export const API_CATALOG: ApiCatalogEntry[] = [
     tags: ["property", "schema", "read", "bulk", "report", "ids"],
   },
   {
+    id: "search-products-by-asset",
+    title: "Search Products by Linked Digital Asset",
+    method: "GET",
+    pathTemplate: "/orgs/{orgId}/products",
+    readOnly: true,
+    description:
+      "Find products where a digital asset property equals an asset ID. Build filter like ='Main Image':'{assetId}' with OR across multiple properties.",
+    queryParams: ["filter", "page", "per_page"],
+    docUrl: "https://developers.salsify.com/reference/bulk-read-products",
+    tags: ["product", "digital asset", "search", "filter", "link", "associated", "main image"],
+  },
+  {
     id: "filter-syntax",
     title: "Salsify Filter Language",
     method: "REFERENCE",

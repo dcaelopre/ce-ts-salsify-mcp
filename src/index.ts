@@ -17,8 +17,9 @@ import { registerReadSalsifyAssetTool } from "./tools/read-salsify-asset.js";
 import { registerReadSalsifyProductTool } from "./tools/read-salsify-product.js";
 import { registerReadSalsifyPropertiesTool } from "./tools/read-salsify-properties.js";
 import { registerRecommendSalsifyApiRoutesTool } from "./tools/recommend-salsify-api-routes.js";
+import { registerSearchSalsifyProductsByAssetTool } from "./tools/search-salsify-products-by-asset.js";
 
-const SERVER_VERSION = "1.0.0";
+const SERVER_VERSION = "1.1.0";
 
 function createMcpServer(config: SalsifyConfig, client: SalsifyClient): McpServer {
   const server = new McpServer({
@@ -29,6 +30,7 @@ function createMcpServer(config: SalsifyConfig, client: SalsifyClient): McpServe
   registerReadSalsifyProductTool(server, client);
   registerReadSalsifyAssetTool(server, client);
   registerReadSalsifyPropertiesTool(server, client);
+  registerSearchSalsifyProductsByAssetTool(server, client);
   registerRecommendSalsifyApiRoutesTool(server, config);
 
   return server;
@@ -51,6 +53,7 @@ async function main(): Promise<void> {
         "read_salsify_product",
         "read_salsify_asset",
         "read_salsify_properties",
+        "search_salsify_products_by_asset",
         "recommend_salsify_api_routes",
       ],
     });
