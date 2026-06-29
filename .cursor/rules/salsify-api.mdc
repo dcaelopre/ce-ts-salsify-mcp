@@ -18,4 +18,5 @@ Official docs:
 - Auth: `Authorization: Bearer {api_token}`
 - Credentials via `X-Salsify-Api-Token` and `X-Salsify-Org-Id` headers or env vars
 - Bulk ID lookups use HTTP `REPORT` method with body `{ "ids": [...] }`
+- Enumerated/picklist values: `GET https://app.salsify.com/api/orgs/{orgId}/enumerated_values?property_id={propertyId}` (non-v1 org app API)
 - v1 executes read operations only; write routes are documented via recommend tool

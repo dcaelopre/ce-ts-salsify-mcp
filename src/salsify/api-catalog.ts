@@ -152,6 +152,18 @@ export const API_CATALOG: ApiCatalogEntry[] = [
     tags: ["property", "schema", "read", "bulk", "report", "ids"],
   },
   {
+    id: "read-enumerated-values",
+    title: "Read Enumerated / Picklist Values",
+    method: "GET",
+    pathTemplate: "/orgs/{orgId}/enumerated_values",
+    readOnly: true,
+    description:
+      "List or read picklist/enumerated option values for an enumerated property. Requires property_id query param; supports page and per_page for pagination. Single value: GET /enumerated_values/{valueId}?property_id={propertyId}.",
+    queryParams: ["property_id", "page", "per_page"],
+    docUrl: "https://developers.salsify.com/docs/json-lines-import-format",
+    tags: ["enumerated", "picklist", "attribute value", "property", "read", "list", "options"],
+  },
+  {
     id: "search-products-by-asset",
     title: "Search Products by Linked Digital Asset",
     method: "GET",
