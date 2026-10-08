@@ -113,6 +113,10 @@ Fully quit and reopen Claude so MCP servers reload.
 | Item | Value |
 |---|---|
 | MCP endpoint | `…/mcp` |
+| Azure Web App | `celopre-salsify-mcp-dev` |
+| Resource group | `ts-mcp-salsify-connector-rg` |
+| Subscription | `CX Non-Production` (`86c7954c-12b5-42aa-9fb7-df6e4b2f0898`) |
+| Region | East US |
 | API base | `https://app.salsify.com/api/v1/orgs/{orgId}` |
 | Auth | Bearer token (per user via config headers) |
 | Source repo | [ce-ts-salsify-mcp](https://github.com/dcaelopre/ce-ts-salsify-mcp) |

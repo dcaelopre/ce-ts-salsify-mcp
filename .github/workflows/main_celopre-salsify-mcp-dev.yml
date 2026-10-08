@@ -53,7 +53,8 @@ jobs:
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0395B40ADD12421399B6555ED7D08AEF }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B3E5BBD59D574F6C9D61A726584C9267 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_371306A3D91A48429AC00F703CEC16BD }}
+          # CX Non-Production — ts-mcp-salsify-connector-rg
+          subscription-id: '86c7954c-12b5-42aa-9fb7-df6e4b2f0898'
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
